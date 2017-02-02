@@ -1,7 +1,7 @@
 {
   "name": "canvas-image-plotter",
   "version": "0.1.0",
-  "description": "Does the math for manipulating images on an HTML5 canvas.",
+  "description": "Does the math for transforming images on an HTML5 canvas... so you don't have to",
   "main": "canvas-image-plotter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
