@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>canvas-image-plotter.js -- Example</title>
+    <script src="../src/canvas-image-plotter.js"></script>
+  </head>
+
+  <body style="padding-top: 5%; margin: auto; text-align: center;">
+    <canvas id="example-canvas" style="border: solid 2px #ccc;" width="500" height="500"></canvas>
+
+    <canvas id="example-canvas-zoom" style="border: solid 2px #ccc;" width="500" height="500"></canvas>
+
+    <script>
+      var image = new Image();
+      image.onload = function() {
+       var c = document.getElementById("example-canvas");
+       var ctx = c.getContext("2d");
+       plotter = new CanvasImagePlotter(0,0,0,0);
+       var result = plotter.init(image.width, image.height, c.width, c.height);
+       ctx.drawImage(image, result.image.left, result.image.top, result.image.width, result.image.height, 
+                            result.canvas.left, result.canvas.top, result.canvas.width, result.canvas.height);
+
+       var c_zoom = document.getElementById("example-canvas-zoom");
+       var ctx_zoom = c_zoom.getContext("2d");
+       var result_zoom = plotter.zoom({zoom_depth: 500});
+       ctx_zoom.drawImage(image, result_zoom.image.left, result_zoom.image.top, result_zoom.image.width, result_zoom.image.height, 
+                            result_zoom.canvas.left, result_zoom.canvas.top, result_zoom.canvas.width, result_zoom.canvas.height);
+
+
+      }
+      image.src = './yosemite.jpg';
+    </script>
+
+  </body>
+
+</html>
+
