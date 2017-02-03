@@ -243,5 +243,7 @@ var CanvasImagePlotter = (function () {
 
 })();
 
-module.exports = CanvasImagePlotter;
-	
+
+if (typeof module !== "undefined") {
+  module.exports = CanvasImagePlotter;
+}
