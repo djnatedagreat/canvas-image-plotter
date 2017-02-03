@@ -6,3 +6,5 @@ Currently supports:
 * Positioning (cover, contain)
 * Zooming
 * Moving
+
+Docs are a work in progress
